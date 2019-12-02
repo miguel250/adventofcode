@@ -20,7 +20,7 @@ func main() {
 		return
 	}
 
-	defer input.Closee()
+	defer input.Close()
 
 	calculateFuel(input, os.Stdout)
 }
