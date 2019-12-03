@@ -32,7 +32,7 @@ func calculateFuel(input io.Reader, output io.Writer) error {
 		mass, err := strconv.Atoi(scanner.Text())
 
 		if err != nil {
-			return fmt.Errorf("Failed to covered mass to an integer with: %w", err)
+			return fmt.Errorf("failed to covered mass to an integer with: %w", err)
 		}
 
 		sum += int(mass/3) - 2

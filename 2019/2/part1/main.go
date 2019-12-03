@@ -35,7 +35,7 @@ func (p *program) parser(input io.Reader) error {
 		opsCode, err := strconv.Atoi(strings.TrimSpace(scanner.Text()))
 
 		if err != nil {
-			return fmt.Errorf("Failed to covered opsCode to an integer with: %w", err)
+			return fmt.Errorf("failed to covered opsCode to an integer with: %w", err)
 		}
 
 		p.opsCodes = append(p.opsCodes, opsCode)
@@ -49,7 +49,6 @@ func (p *program) eval() error {
 		case haltInstruction:
 			return nil
 		case additionInstruction:
-
 			err := p.processOpsCode()
 			if err != nil {
 				return err
@@ -77,7 +76,7 @@ func (p *program) eval() error {
 			}
 
 		default:
-			return fmt.Errorf("Invalid opscode %d", opsCode)
+			return fmt.Errorf("invalid opscode %d", opsCode)
 		}
 	}
 	return nil
@@ -116,7 +115,6 @@ func (p *program) processOpsCode() error {
 }
 
 func (p *program) getValue(position int) (int, error) {
-	position = position
 	if err := p.isValidPosition(position); err != nil {
 		return 0, err
 	}
@@ -133,7 +131,7 @@ func (p *program) store(value, position int) error {
 
 func (p *program) isValidPosition(position int) error {
 	if position > len(p.opsCodes) || position < 0 {
-		return fmt.Errorf("Failed to store value in position %d", position)
+		return fmt.Errorf("failed to store value in position %d", position)
 	}
 	return nil
 }
@@ -191,7 +189,7 @@ func main() {
 	result, err := exec(input)
 
 	if err != nil {
-		fmt.Println("Failed to exec opscode with %v", err)
+		fmt.Printf("Failed to exec opscode with %v\n", err)
 		return
 	}
 
