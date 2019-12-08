@@ -35,7 +35,6 @@ jobs:
       with:
         go-version: "1.13.x"
     - name: "Installing staticcheck"
-      working-directory: 2019/
       run: "GO111MODULE=on go get honnef.co/go/tools/cmd/staticcheck"
     - name: Checkout code
       uses: actions/checkout@v1
