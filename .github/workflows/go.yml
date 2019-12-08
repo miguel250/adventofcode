@@ -1,5 +1,15 @@
 name: Tests
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - '2019/**'
+    branches:
+      - master
+  pull_request:
+    paths:
+      - '2019/**'
+    branches:
+      - master
 jobs:
   test:
     strategy:
