@@ -47,10 +47,8 @@ func calculateFuel(input io.Reader, output io.Writer) error {
 		}
 
 	}
-
 	str := fmt.Sprintf("%d\n", sum) // convert to integer to round down
 	output.Write([]byte(str))
-
 	return nil
 }
 
