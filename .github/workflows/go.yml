@@ -1,4 +1,4 @@
-name: Tests
+name: Golang
 on:
   push:
     paths:
