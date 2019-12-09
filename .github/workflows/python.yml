@@ -1,9 +1,13 @@
 name: Python
 on:
   push:
+    paths:
+      - '2015/**'
     branches:
       - master
   pull_request:
+    paths:
+      - '2015/**'
     branches:
       - master
 jobs:
