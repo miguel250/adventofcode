@@ -24,7 +24,13 @@ jobs:
     - name: Install Tox
       working-directory: 2015/
       run: pip install tox
-    - name: Run Tox
+    - name: Run Tests
       working-directory: 2015/
-      run: tox -e py37,mypy,lint -p all
+      run: tox -e py37
+    - name: Run Mypy
+      working-directory: 2015/
+      run: tox -e mypy
+    - name: Run linting
+      working-directory: 2015/
+      run: tox -e lint
 
